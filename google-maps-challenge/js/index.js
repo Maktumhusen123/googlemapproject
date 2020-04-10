@@ -2,7 +2,7 @@
 var map;
 var markers = [];
 var infoWindow;
-
+var image;
 function initMap() {
   var losAngeles = {
     lat: 34.06338,
@@ -124,10 +124,12 @@ function createMarker(latlng, name, address, openStatusText, phoneNumber, index)
       </div>
     </div>
   `;
+  image='https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   var marker = new google.maps.Marker({
     map: map,
     position: latlng,
     label: index.toString(),
+    icon:image
   });
   google.maps.event.addListener(marker, "click", function () {
     infoWindow.setContent(html);
